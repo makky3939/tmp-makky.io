@@ -19,7 +19,7 @@ sed "s/#PasswordAuthentication no/PasswordAuthentication no/g" /etc/ssh/sshd_con
 service sshd restart
 
 # install docker
-yum install docker-io
+yum install -y docker-io
 
 # set service
 systemctl start docker.service
