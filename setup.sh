@@ -29,7 +29,7 @@ systemctl enable docker.service
 yum install -y nginx --enablerepo=nginx
 
 # install ruby
-yum install -y ruby
+yum install -y ruby ruby-devel
 
 # install bundler
 gem install bundler
