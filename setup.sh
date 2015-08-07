@@ -8,6 +8,29 @@ rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0
 yum remove -y epel-release
 yum install -y epel-release
 
+# install docker
+yum install -y docker-io
+
+# install nginx
+yum install -y nginx --enablerepo=nginx
+
+# install ruby
+yum install -y ruby ruby-devel gcc make
+
+# open port 80
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+
+# set service
+systemctl start docker.service
+systemctl enable docker.service
+
+# create user
+adduser makky
+passwd makky
+
+su makky
+
 # get public keys
 curl https://github.com/makky3939.keys > ~/.ssh/authorized_keys
 
@@ -17,19 +40,6 @@ sed "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/g" /etc/ssh/sshd_confi
 sed "s/#AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/g" /etc/ssh/sshd_config
 sed "s/#PasswordAuthentication no/PasswordAuthentication no/g" /etc/ssh/sshd_config
 service sshd restart
-
-# install docker
-yum install -y docker-io
-
-# set service
-systemctl start docker.service
-systemctl enable docker.service
-
-# install nginx
-yum install -y nginx --enablerepo=nginx
-
-# install ruby
-yum install -y ruby ruby-devel gcc make
 
 # install bundler
 gem install bundler
