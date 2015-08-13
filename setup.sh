@@ -25,12 +25,6 @@ firewall-cmd --reload
 systemctl start docker.service
 systemctl enable docker.service
 
-# create user
-adduser makky
-passwd makky
-
-su makky
-
 # get public keys
 curl https://github.com/makky3939.keys > ~/.ssh/authorized_keys
 
