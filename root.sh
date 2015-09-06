@@ -9,6 +9,8 @@ yum install -y epel-release
 
 # install docker
 yum install -y docker-io
+sudo /etc/init.d/docker start
+sudo /etc/init.d/docker enable
 
 # install nginx
 yum install -y nginx --enablerepo=nginx

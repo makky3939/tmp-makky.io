@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# set service
-sudo /etc/init.d/docker start
-sudo /etc/init.d/docker enable
-
 # get public keys
 mkdir ~/.ssh
 chmod 755 ~/.ssh
