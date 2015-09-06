@@ -16,6 +16,12 @@ yum install -y nginx --enablerepo=nginx
 # install ruby
 yum install -y ruby ruby-devel gcc make
 
+# install emacs
+yum install -y emacs
+
+# install tmux
+yum install -y tmux
+
 # open port 80
 # firewall-cmd --zone=public --add-port=80/tcp --permanent
 # firewall-cmd --reload
@@ -25,5 +31,5 @@ adduser makky
 passwd makky
 
 # add group
-gpasswd -a makky wheel
-sed "s/# %wheel        ALL=(ALL)       NOPASSWD: ALL/%wheel        ALL=(ALL)       NOPASSWD: ALL/g" /etc/sudoers
+usermod -G wheel makky
+sed "s/\%wheel        ALL=(ALL)       NOPASSWD: ALL/# \%wheel        ALL=(ALL)       NOPASSWD: ALL/g" /etc/sudoers

@@ -26,5 +26,3 @@ bundle install
 
 # run
 # docker run -d -p 80:80 --name nginx1 mk/nginx:0.2 /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
-
-exit 0
