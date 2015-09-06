@@ -1,18 +1,12 @@
 #!/bin/sh
 
 # set service
-systemctl start docker.service
-systemctl enable docker.service
+sudo /etc/init.d/docker start
+sudo /etc/init.d/docker enable
 
 # get public keys
+mkdir ~/.ssh
 curl https://github.com/makky3939.keys > ~/.ssh/authorized_keys
-
-# set sshd_config
-sed "s/#RSAAuthentication yes/RSAAuthentication yes/g" /etc/ssh/sshd_config
-sed "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/g" /etc/ssh/sshd_config
-sed "s/#AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/g" /etc/ssh/sshd_config
-sed "s/#PasswordAuthentication no/PasswordAuthentication no/g" /etc/ssh/sshd_config
-service sshd restart
 
 # install bundler
 gem install bundler
