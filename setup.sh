@@ -6,14 +6,16 @@ sudo /etc/init.d/docker enable
 
 # get public keys
 mkdir ~/.ssh
+chmod 755 ~/.ssh
 curl https://github.com/makky3939.keys > ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
 
 # install bundler
-gem install bundler
+sudo gem install bundler
 bundle config --global jobs 4
 
 # bundle install
-bundle install
+sudo bundle install
 
 # build
 # sudo docker build -t mk/nginx:0.2 --no-cache .

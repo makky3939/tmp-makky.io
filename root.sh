@@ -14,7 +14,7 @@ yum install -y docker-io
 yum install -y nginx --enablerepo=nginx
 
 # install ruby
-yum install -y ruby ruby-devel gcc make
+yum install -y ruby ruby-devel gcc make rubygems
 
 # install emacs
 yum install -y emacs
@@ -27,10 +27,10 @@ yum install -y tmux
 # firewall-cmd --reload
 
 # set sshd_config
-sed "s/#RSAAuthentication yes/RSAAuthentication yes/g" /etc/ssh/sshd_config
-sed "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/g" /etc/ssh/sshd_config
-sed "s/#AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/g" /etc/ssh/sshd_config
-sed "s/#PasswordAuthentication no/PasswordAuthentication no/g" /etc/ssh/sshd_config
+sed -i "s/#RSAAuthentication yes/RSAAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/#AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/g" /etc/ssh/sshd_config
+sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
 sudo /etc/init.d/sshd restart
 
 # create user
