@@ -17,8 +17,8 @@ yum install -y nginx --enablerepo=nginx
 yum install -y ruby ruby-devel gcc make
 
 # open port 80
-firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --reload
+# firewall-cmd --zone=public --add-port=80/tcp --permanent
+# firewall-cmd --reload
 
 # create user
 adduser makky
