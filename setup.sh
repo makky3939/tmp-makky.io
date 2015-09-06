@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# set sshd_config
+sudo sed -i "s/#RSAAuthentication yes/RSAAuthentication yes/g" /etc/ssh/sshd_config
+sudo sed -i "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/g" /etc/ssh/sshd_config
+sudo sed -i "s/#AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/g" /etc/ssh/sshd_config
+sudo sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
+sudo /etc/init.d/sshd restart
+
 # get public keys
 mkdir ~/.ssh
 chmod 755 ~/.ssh

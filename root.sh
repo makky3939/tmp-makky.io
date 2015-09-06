@@ -28,13 +28,6 @@ yum install -y tmux
 # firewall-cmd --zone=public --add-port=80/tcp --permanent
 # firewall-cmd --reload
 
-# set sshd_config
-sed -i "s/#RSAAuthentication yes/RSAAuthentication yes/g" /etc/ssh/sshd_config
-sed -i "s/#PubkeyAuthentication yes/PubkeyAuthentication yes/g" /etc/ssh/sshd_config
-sed -i "s/#AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/g" /etc/ssh/sshd_config
-sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
-sudo /etc/init.d/sshd restart
-
 # create user
 adduser makky
 passwd makky
