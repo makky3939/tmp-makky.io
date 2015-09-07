@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # add npm package
-rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+sudo rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 
 # update epel-release
 yum remove -y epel-release
@@ -16,7 +16,7 @@ sudo /etc/init.d/docker enable
 yum install -y nginx --enablerepo=nginx
 
 # install ruby
-yum install -y ruby ruby-devel gcc make rubygems
+yum install -y ruby ruby-devel gcc make rubygems gcc-c++ g++ libxml2 libxml2-devel
 
 # install emacs
 yum install -y emacs
