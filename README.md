@@ -7,7 +7,7 @@ ssh root@my_server_ip
 ```
 
 ```
-cd /tmp && yum install git -y && git clone https://github.com/makky-io/starter.git && sh /tmp/starter/root.sh
+cd /tmp && yum install git -y && git clone https://github.com/makky3939/makky.io.git && sh /tmp/makky.io/root.sh
 ```
 
 ```
@@ -24,7 +24,7 @@ ssh makky@my_server_ip
 ```
 
 ```
-sh /tmp/starter/setup.sh
+sh /tmp/makky.io/setup.sh
 ```
 
 
