@@ -34,4 +34,3 @@ passwd makky
 
 # add group
 usermod -G wheel makky
-# sed "s/\%wheel        ALL=(ALL)       NOPASSWD: ALL/# \%wheel        ALL=(ALL)       NOPASSWD: ALL/g" /etc/sudoers

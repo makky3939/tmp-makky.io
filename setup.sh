@@ -18,7 +18,7 @@ sudo gem install bundler
 bundle config --global jobs 4
 
 # bundle install
-sudo bundle install
+cd /tmp/makky.io && sudo bundle install
 
 # build
 # sudo docker build -t mk/nginx:0.2 --no-cache .
