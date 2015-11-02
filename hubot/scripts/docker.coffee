@@ -2,7 +2,7 @@ module.exports = (robot) ->
   robot.respond /ps/, (msg) ->
     # msg.send msg
     @exec = require('child_process').exec
-    command = "sudo docker ps | cat"
+    command = "bash -e sudo docker ps | cat"
     msg.send "Command: #{command}"
     @exec command, (error, stdout, stderr) ->
       msg.send error if error?
