@@ -6,6 +6,7 @@
   "description": "bot.makky.io",
   "dependencies": {
     "coffee-script": "^1.10.0",
+    "forever": "^0.15.1",
     "hubot": "^2.16.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.2.3",
