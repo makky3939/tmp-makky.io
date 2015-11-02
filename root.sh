@@ -24,6 +24,14 @@ yum install -y emacs
 # install tmux
 yum install -y tmux
 
+# install npm
+yum install -y npm
+
+# install redis
+yum install -y redis
+/etc/init.d/redis start
+chkconfig redis on
+
 # open port 80
 # firewall-cmd --zone=public --add-port=80/tcp --permanent
 # firewall-cmd --reload
