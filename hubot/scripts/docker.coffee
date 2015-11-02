@@ -1,6 +1,6 @@
 module.exports = (robot) ->
   robot.respond /ps/, (msg) ->
-    msg.send msg
+    # msg.send msg
     @exec = require('child_process').exec
     command = "sudo docker ps"
     msg.send "Command: #{command}"
