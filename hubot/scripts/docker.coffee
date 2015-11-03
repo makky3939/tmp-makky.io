@@ -1,8 +1,7 @@
 module.exports = (robot) ->
   robot.respond /ps/, (msg) ->
-    # msg.send msg
     @exec = require('child_process').exec
-    command = "bash -e sudo docker ps | cat"
+    command = "sudo docker ps | awk '{print $1, $(NF-1), $(NF)}'"
     msg.send "Command: #{command}"
     @exec command, (error, stdout, stderr) ->
       msg.send error if error?
