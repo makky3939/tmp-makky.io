@@ -25,7 +25,7 @@ module.exports = (robot) ->
       .auth('on-the-makky-s-desk', process.env['HOME_IO_PASS'], false)
       .get() (err, res, body) ->
         json = JSON.parse body
-        msg.send json
+        msg.send body
 
     # @exec = require('child_process').exec
     # command = "curl --user on-the-makky-s-desk:#{process.env['HOME_IO_PASS']} http://home.makky.io/api/v1/logs"
