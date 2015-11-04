@@ -25,7 +25,7 @@ module.exports = (robot) ->
       .auth('on-the-makky-s-desk', process.env['HOME_IO_PASS'], false)
       .get() (err, res, body) ->
         json = JSON.parse body
-        for key val of json
+        for key, val of json
           msg.send String(val)
 
     # @exec = require('child_process').exec
