@@ -1,6 +1,9 @@
 request = require 'request'
 
 module.exports = (robot) ->
-  robot.respond /温度/, (msg) ->
-    request 'http://home.makky.io/api/v1/logs', (res) ->
-      msg.send res
+  robot.respond /home/, (msg) ->
+  request
+    .get('http://home.makky.io/api/v1/logs', (e, r, c) ->
+      msg.send c
+    )
+    .auth('on-the-makky-s-desk', process.env['HOME_IO_PASS'], false)
