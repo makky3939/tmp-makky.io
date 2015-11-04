@@ -27,6 +27,7 @@ module.exports = (robot) ->
         json = JSON.parse body
         for key, val of json
           msg.send val.location.name
+          msg.send ">> 温度: #{val.temperature.name}, 湿度: #{val.humidity.name}, 気圧: #{val.atmosphere.name}"
 
     # @exec = require('child_process').exec
     # command = "curl --user on-the-makky-s-desk:#{process.env['HOME_IO_PASS']} http://home.makky.io/api/v1/logs"
