@@ -22,11 +22,18 @@ module.exports = (robot) ->
 
 module.exports = (robot) ->
   robot.respond /home/, (msg) ->
-    @exec = require('child_process').exec
-    command = "curl --user on-the-makky-s-desk:#{process.env['HOME_IO_PASS']} http://home.makky.io/api/v1/logs"
-    msg.send "Command: #{command}"
-    @exec command, (error, stdout, stderr) ->
-      msg.send error if error?
-      msg.send stdout if stdout?
-      msg.send stderr if stderr?
-    return
+    msg.http('http://home.makky.io')
+      .path('api/v1/logs')
+      .auth('on-the-makky-s-desk', process.env['HOME_IO_PASS'], false)
+      .get() (err, res, body) ->
+        json = JSON.parse body
+        msg.send json
+    
+    # @exec = require('child_process').exec
+    # command = "curl --user on-the-makky-s-desk:#{process.env['HOME_IO_PASS']} http://home.makky.io/api/v1/logs"
+    # msg.send "Command: #{command}"
+    # @exec command, (error, stdout, stderr) ->
+    #   msg.send error if error?
+    #   msg.send stdout if stdout?
+    #   msg.send stderr if stderr?
+    # return
