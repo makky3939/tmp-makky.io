@@ -9,7 +9,6 @@ module.exports = (robot) ->
       msg.send stderr if stderr?
     return
 
-module.exports = (robot) ->
   robot.respond /restart/, (msg) ->
     @exec = require('child_process').exec
     command = "sh /home/makky/makky.io/hubot/bin/restart"
@@ -20,7 +19,6 @@ module.exports = (robot) ->
       msg.send stderr if stderr?
     return
 
-module.exports = (robot) ->
   robot.respond /home/, (msg) ->
     msg.http('http://home.makky.io')
       .path('api/v1/logs')
@@ -28,7 +26,7 @@ module.exports = (robot) ->
       .get() (err, res, body) ->
         json = JSON.parse body
         msg.send json
-    
+
     # @exec = require('child_process').exec
     # command = "curl --user on-the-makky-s-desk:#{process.env['HOME_IO_PASS']} http://home.makky.io/api/v1/logs"
     # msg.send "Command: #{command}"
