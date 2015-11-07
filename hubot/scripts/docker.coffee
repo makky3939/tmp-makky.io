@@ -7,3 +7,6 @@ module.exports = (robot) ->
       msg.send error if error?
       msg.send stdout if stdout?
       msg.send stderr if stderr?
+
+  robot.respond /docker deploy (.*)/, (msg) ->
+    msg.send "docker deploy #{msg.match[1]}"
