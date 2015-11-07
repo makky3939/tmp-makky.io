@@ -3,6 +3,6 @@ module.exports = (robot) ->
     res.end robot.version
 
   robot.router.post /\/container\/(.*)/, (req, res) ->
-    console.log res
+    console.log req
     robot.send {room: 'general'}, "aaa"
     res.end 200
