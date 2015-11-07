@@ -3,4 +3,5 @@ module.exports = (robot) ->
     res.end robot.version
 
   robot.router.post "/docker", (req, res) ->
-    msg.send req
+    robot.send {room: 'general'}, req
+    res.end req
