@@ -3,5 +3,6 @@ module.exports = (robot) ->
     res.end robot.version
 
   robot.router.post "/docker", (req, res) ->
-    robot.send {room: 'general'}, req
+    console.log res
+    robot.send {room: 'general'}, "aaa"
     res.end req
