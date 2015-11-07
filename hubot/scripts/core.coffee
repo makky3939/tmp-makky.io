@@ -18,3 +18,6 @@ module.exports = (robot) ->
       msg.send stdout if stdout?
       msg.send stderr if stderr?
     return
+
+  robot.hear /マジ病み/, (msg) ->
+    msg.send ":goat: メェェ "
