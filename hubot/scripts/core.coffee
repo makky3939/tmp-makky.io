@@ -22,6 +22,9 @@ module.exports = (robot) ->
   robot.hear /マジ病み/, (msg) ->
     msg.send ":goat: メェェ "
 
+  robot.hear /疲れた/, (msg) ->
+    msg.send ":goat: メェェ "
+
   robot.respond /df/, (msg) ->
     @exec = require('child_process').exec
     command = "dfs"
